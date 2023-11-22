@@ -1,0 +1,240 @@
+.heading{
+    color: rgb(94, 94, 108);
+}
+
+.leftside{ 
+    float: left; 
+    height: 100%; 
+    width: 200px; 
+    margin: 0px; 
+    overflow-y:auto; 
+} 
+
+.rightside{ 
+    height: 100%; 
+    width:100%; 
+    align-content:right; 
+}
+
+.text{
+font-size: 2.5rem;
+margin-top: 15%;
+margin-bottom: 1.5%;
+line-height: 4rem;
+text-transform: uppercase;
+ }   
+
+ .text0{
+    font-size: 2.5rem;
+    margin-top: 15%;
+    margin-bottom: 1.5%;
+    line-height: 4rem;
+    text-transform: uppercase;
+    z-index: 1;
+     }   
+
+.textp{
+    font-size: 1.5rem;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+    line-height: 2.5rem;
+}
+
+ button{
+    border: #ffffff 2px solid;
+    background-color: #000001;
+    padding: 15px 40px;
+    color: #ffffff;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .box{
+    width:5000px; height:800px;  
+    position:static;
+    border:solid 5px #000;
+    border-color:#000 transparent transparent transparent;
+    border-radius: 50%/100px 100px 0 0;
+    position: fixed;
+  }
+
+.center-in-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.nav{
+    background-color: rgb(255, 255, 255);
+    height: 66px;
+    width: 100%;
+    line-height: 80px;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    z-index: 2;
+    font-size: 1.2rem;
+}
+
+.nav li{
+    float: left;
+    width: 210px;
+    text-align: center;
+    position: auto;
+}
+
+.ul_top{
+    list-style: none;
+    position: absolute;
+    top: auto;
+}
+
+.nav a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    width: 100px;
+    line-height: 35px;
+    min-width: 100px;
+}
+
+.nav a:hover{
+    color:navy;
+    font-weight: bold;
+}
+
+.date{
+    color: rgb(196, 196, 196);
+}
+
+
+ video{ 
+        display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#big{
+    font-size: large;
+}
+
+#extra{
+    font-size: xx-large;
+    margin-top: 1%;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(243, 243, 243);
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#arch{
+    background-color: antiquewhite;
+    width: 10%;
+}
+
+#title{
+    position: calc(left);
+}
+
+#textblock{
+    background-color: rgb(127, 242, 255);
+    text-align: center;
+    margin: auto;
+    width: 888px;
+}
+
+#textblock:hover{
+    background-color: black;
+    transition-property: all;
+    transition-duration: 2s;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+  
+  .top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  
+  .top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+  
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+  
+  .centered {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(18, 18, 18);
+    font-size: 2rem;
+  }
+
+.image{ 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    min-width: 1000px;
+    z-index: -10;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center 0;
+}
+
+#div{
+    position: relative;
+    width:100%;
+}
+
+
+
+.imagep{
+    position: absolute;
+    color: #000;
+    top: 0;
+    left: 0;
+}
+
+#image:hover{
+    opacity: 1.0;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+@keyframes bounce{
+    0%{
+        top:0px
+    }
+    100%{
+        top:280px
+    }
+}

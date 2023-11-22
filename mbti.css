@@ -1,0 +1,86 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(243, 243, 243);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.center {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.mbti-question {
+    font-size: 6rem;
+    width: 40%;
+    text-align: left;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#mbtiInput {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+}
+
+button {
+    border: 2px solid #000001;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    color: #000001;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+#response {
+    display: none; /* Initially hidden */
+    position: fixed; /* Position it relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust the position to truly center it */
+    width: auto; /* Auto width based on content */
+    text-align: center; /* Center align text */
+    padding: 20px; /* Add some padding */
+    animation: fadeIn 1s ease-in-out;
+}
+
+#responseText {
+    font-size: 1.5rem;
+    margin-bottom: 20px; /* Space above the button */
+}
+
+#continueButton {
+    display: block; /* Ensure it's a block-level element */
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 0 auto; /* Center the button */
+    border: 2px solid #000001;
+    background-color: #ffffff;
+    color: #000001;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CQ - MBTI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="ethers-5.6.umd.min.js"></script>
+    <script src="abi.js"></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="mbti.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="center">
+        <div class="mbti-question">
+            <p>What is your MBTI?</p>
+        </div>
+        <div id="mbtiInput">
+            <!-- <label for="mbti">Enter</label> -->
+            <input type="text" id="mbti" name="mbti" placeholder="e.g. INTJ"> 
+            <button id="submitMBTI">Submit</button>
+        </div>
+    </div>
+    
+    <div id="response" style="display:none;">
+        <p id="responseText"></p>
+        <button id="continueButton" style="display:none;">Project Introduction</button>
+    </div>
+
+</body>
+
+</html>
