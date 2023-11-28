@@ -1,0 +1,127 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+    margin: 0;
+    padding: 30px;
+}
+
+.nav {
+    background-color: #121212; /* Dark background */
+    height: 66px;
+    width: 100%;
+    line-height: 66px; /* Adjusted for consistent height */
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional shadow for depth */
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    float: left;
+    width: 210px;
+    text-align: center;
+    font-weight:bolder;
+    position: auto; /* Center the navigation items */
+}
+
+.nav li {
+    margin: 0 20px; /* Spacing between nav items */
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0px 50px; /* Padding for clickable area */
+}
+
+.nav a:hover {
+    color:  #d8d8d8;
+    font-weight: bold;
+}
+
+.nft-container {
+    display: flex;
+    align-items: flex-start; /* 顶部对齐 */
+    padding: 2rem;
+    margin-top: 80px; /* 防止与固定导航栏重叠 */
+}
+
+.nft-image-container {
+    max-width: 145%; /* 控制图片容器的宽度 */
+    margin-right: 3rem; /* 在图片容器和详细信息之间添加间隔 */
+}
+
+.nft-image {
+    width: 100%; /* 让图片填充整个容器 */
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #292929; /* Border for NFT items */
+}
+
+.nft-details {
+    flex-grow: 1; /* 让详细信息区域占据剩余空间 */
+    padding: 30px;
+}
+
+.nft-price, .nft-floor-price {
+    font-size: 1.2em; /* 或您希望的任何大小 */
+    font-weight: bold; /* 加粗字体 */
+}
+
+.offer-form button {
+    background-color: #000001; /* 黑色背景 */
+    color: #ffffff; /* 白色文本 */
+    padding: 10px 20px;
+    border: 2px solid #d8d8d8;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 150ms ease-in-out;
+}
+
+.offer-form button:hover {
+    background-color: #333333; /* 鼠标悬浮时的背景颜色 */
+}
+
+
+.offer-form input {
+    padding: 10px 20px;
+    margin-top: 10px; /* Consistent margin */
+    border: 2px solid #d8d8d8;
+    background-color: #ffffff;
+    color: #000001;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+}
+
+.offer-form button:hover {
+    background-color: #000001;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+aside#activity {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 4rem;
+    padding-top: 1rem;
+    background-color: #1a1a1a;
+    margin-bottom: 50rem;
+    border-radius: 10px; /* Optional for rounded corners */
+    border: 1px solid #292929; /* Border for NFT items */
+}
+
+.activity{
+    padding: 2rem;
+}
+
+.foot{
+    padding: 4rem;    
+}

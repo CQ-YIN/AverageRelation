@@ -77,3 +77,38 @@ document.getElementById("submitMBTI").addEventListener("click", function() {
 });
 
 
+//mint
+function limitDecimalPlaces(e, count) {
+    if (e.target.value.indexOf('.') == -1) { return; }
+    if ((e.target.value.length - e.target.value.indexOf('.')) > count) {
+      e.target.value = parseFloat(e.target.value).toFixed(count);
+    }
+  }
+  
+  async function submitPrice() {
+    const price = document.getElementById("priceInput").value;
+    if (price < 0.1 || price > 10) {
+        alert("Price must be between 0.1 and 10 ETH");
+        return;
+    }
+
+    // Here you would send the price to your smart contract
+    console.log("Submitted price: " + price + " ETH");
+
+    // Simulating response after successful submission
+    updatePriceInfo(price);
+}
+
+function updatePriceInfo(newPrice) {
+    // Dummy data - replace with actual data from your smart contract or server
+    const avgPrice = newPrice; // Placeholder
+    document.getElementById('avgPrice').innerText = avgPrice + " ETH";
+    
+    // Update other dynamic elements as needed
+}
+
+// Initial data load (replace with real data fetching)
+window.onload = () => {
+    document.getElementById('nftTitle').innerText = 'Example NFT';
+    updatePriceInfo('0.5'); // Example average price
+};

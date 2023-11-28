@@ -1,0 +1,99 @@
+body.dark-mode {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+    margin: 0;
+    padding: 30px;
+    margin-top: 80px
+}
+
+.nav {
+    background-color: #121212;
+    height: 66px;
+    width: 100%;
+    line-height: 66px; /* Adjusted for consistent height */
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional shadow for depth */
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    float: left;
+    width: 210px;
+    text-align: center;
+    font-weight:bolder;
+    position: auto; /* Center the navigation items */
+}
+
+.nav li {
+    margin: 0 20px; /* Spacing between nav items */
+}
+
+.nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: block;
+    padding: 0px 50px; /* Padding for clickable area */
+}
+
+.nav a:hover {
+    color:  #d8d8d8;
+    font-weight: bold;
+}
+
+.nft-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+.nft-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Adjust based on the container size */
+}
+
+.nft-item {
+    width: calc(25% - 20px); /* Adjust width for four items per row minus gap */
+    margin: 10px; /* For spacing between items */
+    border: 3px solid #fff; /* Border for NFT items */
+    border-radius: 10px;
+}
+
+.nft-item a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.nft-item img {
+    width: 100%;
+    display: block;
+    border-radius: 10px 10px 0 0; /* Rounded corners at the top */
+}
+
+.nft-title {
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .nft-item {
+        width: calc(50% - 20px); /* Adjust for smaller screens, two items per row */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nft-item {
+        width: calc(100% - 20px); /* Adjust for mobile screens, one item per row */
+    }
+}
