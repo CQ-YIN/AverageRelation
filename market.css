@@ -54,6 +54,7 @@ body.dark-mode {
     justify-content: space-around;
     gap: 20px;
     padding: 20px;
+    margin-bottom: 50rem;
 }
 
 .nft-row {
@@ -63,7 +64,7 @@ body.dark-mode {
 }
 
 .nft-item {
-    width: calc(25% - 20px); /* Adjust width for four items per row minus gap */
+    width: 25%; /* Adjust width for four items per row minus gap */
     margin: 10px; /* For spacing between items */
     border: 3px solid #fff; /* Border for NFT items */
     border-radius: 10px;
@@ -96,4 +97,8 @@ body.dark-mode {
     .nft-item {
         width: calc(100% - 20px); /* Adjust for mobile screens, one item per row */
     }
+}
+
+.foot {
+    margin-top: 4rem; /* Adjust the margin to create space after the content */
 }

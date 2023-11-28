@@ -1,4 +1,4 @@
-contractAddress = "0xE7D9e6C60Cc084738D72953b947D5D22DD6597e7"
+contractAddress = "0xAB2681A822797aDB0Cd9970756f52A387CDd304F"
 contractABI =[
 	{
 		"inputs": [
