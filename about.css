@@ -5,6 +5,10 @@ body, html {
     background-color: rgb(243, 243, 243);
 }
 
+.br-left {
+    margin-left: 20px; /* Adjust the left margin to control the line break position */
+}
+
 .nav {
     background-color: #ffffff; /* Dark background */
     height: 66px;
@@ -46,6 +50,39 @@ body, html {
     font-weight: bold;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+    margin-top: 66px;
+    padding: 20px;
+}
+
+.sidebar, .sidebar-start-button {
+    /* This aligns the sidebar titles with the content */
+    padding: 20px;
+    padding-left: 30%;
+    /* background-color: #f8f8f8; */
+    height: fit-content;
+}
+
+.textp {
+    font-size: 18px;
+    color: #333;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 0;
+    padding: 20px;
+    padding-right: 15%;
+    /* background-color: #ffffff; */
+}
+
+.fullscreen-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 /* Container holding the image and text */
 .container {
     position: relative;
@@ -60,12 +97,12 @@ body, html {
     object-fit: cover;
 }
 
-/* Text paragraphs */
-.textp {
-    font-size: 1.5rem;
-    margin: 5rem 15%; /* Reduced top and bottom margins */
-    line-height: 2rem; /* Adjusted for less space between lines */
+.textp h1, .textp h2, .textp h3, .textp h4 {
+    font-weight: 1000; /* Slightly bolder than normal text for headings */
+    color: #000; /* Headings might be a pure black for emphasis */
+    margin-bottom: 10px; /* Add some space below headings */
 }
+
 
 button {
     border: #ffffff 2px solid;
@@ -80,8 +117,19 @@ button {
     font-family: 'Montserrat', sans-serif;
 }
 
+a {
+    text-decoration: none; /* Removes underlines from all links */
+}
+
+/* Specifically for links wrapping buttons, to override any other styles */
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none; /* Ensures no underline appears at any state */
+}
+
+
 footer p {
     text-align: center;
     padding: 4rem 0; /* Space at the bottom of the footer */
     padding-top: 50rem;
 }
+
