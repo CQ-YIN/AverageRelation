@@ -1,5 +1,18 @@
-contractAddress = "0xAB2681A822797aDB0Cd9970756f52A387CDd304F"
+contractAddress = "0x3D01F37b2D306AE9aa87d77019522Ba9dd42FE60"
 contractABI =[
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_relationshipText",
+				"type": "string"
+			}
+		],
+		"name": "addRelationship",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
 	{
 		"inputs": [
 			{
@@ -14,19 +27,6 @@ contractABI =[
 			}
 		],
 		"name": "approve",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "burn",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -190,16 +190,42 @@ contractABI =[
 		"type": "event"
 	},
 	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_tokenId",
+				"name": "_relationshipId",
 				"type": "uint256"
 			}
 		],
-		"name": "mintNFT",
+		"name": "safeMint",
 		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -322,35 +348,12 @@ contractABI =[
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			},
-			{
 				"internalType": "address",
-				"name": "_to",
+				"name": "newOwner",
 				"type": "address"
 			}
 		],
-		"name": "transferNFT",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_newValue",
-				"type": "uint256"
-			}
-		],
-		"name": "updateValue",
+		"name": "transferOwnership",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -364,32 +367,6 @@ contractABI =[
 			}
 		],
 		"name": "balanceOf",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "CEILING_PRICE",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "FLOOR_PRICE",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -422,6 +399,63 @@ contractABI =[
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "_relationshipId",
+				"type": "uint256"
+			}
+		],
+		"name": "getAveragePrice",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_relationshipId",
+				"type": "uint256"
+			}
+		],
+		"name": "getOwners",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_relationshipId",
+				"type": "uint256"
+			}
+		],
+		"name": "getPriceHistory",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "owner",
 				"type": "address"
@@ -445,7 +479,20 @@ contractABI =[
 	},
 	{
 		"inputs": [],
-		"name": "MAX_OWNERSHIP_SHARE",
+		"name": "MAX_PRICE",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "MIN_PRICE",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -470,48 +517,13 @@ contractABI =[
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "nftData",
+		"inputs": [],
+		"name": "owner",
 		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "averagePrice",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "totalOwners",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
 			{
 				"internalType": "address",
 				"name": "",
 				"type": "address"
-			}
-		],
-		"name": "nftOwners",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
@@ -531,6 +543,40 @@ contractABI =[
 				"internalType": "address",
 				"name": "",
 				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "relationships",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "relationshipId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "relationshipText",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalPrice",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "averagePrice",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
