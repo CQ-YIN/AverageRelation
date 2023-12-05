@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="ethers-5.6.umd.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
     <script src="abi.js"></script>
-    <script src="main.js" defer></script>
+    <script src="nftgallery.js" defer></script>
     <link rel="stylesheet" href="nftgallery.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,25 +28,25 @@
         <!-- Repeat this block for each NFT, ensure each 'nft-item' div only contains up to four NFTs before starting a new row -->
         <!-- Row 1 -->
         <div class="nft-row">
-            <div class="nft-item">
+            <div class="nft-item" data-relationship="1">
                 <a href="mom.html">
                     <img src="nft-media/images/mom.jpg" alt="NFT Image" class="nft-image"/>
                     <h2 class="nft-title">Relationship 1</h2>
                 </a>
             </div>
-            <div class="nft-item">
+            <div class="nft-item" data-relationship="2">
                 <a href="roommate.html">
                     <img src="nft-media/images/roommate.jpg" alt="NFT Image" class="nft-image"/>
                     <h2 class="nft-title">Relationship 2</h2>
                 </a>
             </div>
-            <div class="nft-item">
+            <div class="nft-item" data-relationship="3">
                 <a href="friend.html">
                     <img src="nft-media/images/college.jpg" alt="NFT Image" class="nft-image"/>
                     <h2 class="nft-title">Relationship 3</h2>
                 </a>
             </div>
-            <div class="nft-item">
+            <div class="nft-item" data-relationship="4">
                 <a href="pet.html">
                     <img src="nft-media/images/pet.jpg" alt="NFT Image" class="nft-image"/>
                     <h2 class="nft-title">Relationship 4</h2>
