@@ -15,14 +15,20 @@ async function main() {
     contractWithSigner = contract.connect(signer);
     console.log("connected???")
 
-    // 1. click on relationship image to mint NFT (make sure payment goes through properly)
-    // 2. display the current owners and price history in a chart
-    // 3. display the average price for each relationship
 
+    // 1. display the average price for each relationship
+    // 2. display the current owners and price history in a chart
+
+
+    // DISPLAY AVERAGE PRICE
+
+    updateAveragePrice();
+
+    displayPriceHistory();
 
 
     //mint
-    
+
 
 
     submitBtn.addEventListener('click', async function () {
@@ -30,8 +36,7 @@ async function main() {
         //     alert("Please select an NFT first.");
         //     return;
         // }
-        
-        const currentRelationshipId = this.dataset.relationshipId;
+
 
         console.log(currentRelationshipId);
 
@@ -49,7 +54,7 @@ async function main() {
                 to: contractAddress,
                 data: transactionData,
                 value: priceInWei, // User-determined price
-              });
+            });
 
             // const tx = await contractWithSigner.safeMint(currentRelationshipId);
             await tx.wait();
@@ -67,20 +72,69 @@ async function main() {
         return numPrice >= 0.1 && numPrice <= 10;
     }
 
-    async function updateAveragePrice(relationshipId) {
-        try {
-            // 使用contractWithSigner调用智能合约中的getAveragePrice函数
-            const averagePriceWei = await contractWithSigner.getAveragePrice(relationshipId);
+    async function updateAveragePrice() {
+        const currentRelationshipId = submitBtn.dataset.relationshipId;
+        let averagePrice = await contract.getAveragePrice(currentRelationshipId);
+        averagePrice = +averagePrice + "";
+        averagePrice = ethers.utils.formatEther(averagePrice);
+        document.getElementById('avgPrice').innerText = averagePrice + " ETH";
+    }
 
-            // 将从智能合约返回的价格（单位为wei）转换为以太（ETH）
-            const averagePriceEth = ethers.utils.formatEther(averagePriceWei);
+    async function displayPriceHistory() {
+        const currentRelationshipId = submitBtn.dataset.relationshipId;
 
-            // 更新页面上的元素以显示平均价格
-            document.getElementById('avgPrice').innerText = averagePriceEth + " ETH";
+        const priceHistory = await contract.getPriceHistory(currentRelationshipId);
+        const owners = await contract.getOwners(currentRelationshipId);
 
-        } catch (error) {
-            console.error("Error fetching updated data:", error);
+        for(let i = 0; i < priceHistory.length; i++) {
+            let currentPrice = priceHistory[i];
+            let currentOwner = owners[i]
+
+            currentPrice = ethers.utils.formatEther(+currentPrice + "");
+            currentOwner = currentOwner + "";
+            console.log(currentPrice, currentOwner);
+
+            const newRow =
+            `
+            <div class="owner">${currentOwner}</div>
+            <div class="price">${currentPrice}</div>
+            `
+
+            $('.price-history-container').append(newRow);
         }
+
+        console.log(priceHistory, owners)
+
+        function drawChart(data) {
+    const ctx = document.getElementById('priceHistoryChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: data.labels,
+            datasets: [{
+                label: 'Price History',
+                data: data.prices,
+                backgroundColor: 'rgba(0, 123, 255, 0.2)',
+                borderColor: 'rgba(0, 123, 255, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+}
+
+
+        // get the price history of the current relationship
+        // loop through the array of prices
+        // loop through the array of owners
+        // create a .row div and store the information in there
+        // add the row to the container
     }
 
     async function getCurrentOwner(tokenId) {
@@ -101,3 +155,10 @@ function limitDecimalPlaces(e, count) {
         e.target.value = parseFloat(e.target.value).toFixed(count);
     }
 }
+
+
+// let num = 1;
+// for(let i = 1; i <= 10; i++) {
+//     num*=i;
+//     console.log(num);
+// }
