@@ -141,7 +141,6 @@ async function main() {
         try {
             const ownerAddress = await contractWithSigner.ownerOf(tokenId);
             console.log("Current owner:", ownerAddress);
-            // 更新网页上的元素以显示当前所有者
             document.getElementById('currentOwner').innerText = ownerAddress;
         } catch (error) {
             console.error("Error fetching current owner:", error);
