@@ -129,11 +129,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+
 
 aside#activity {
     padding-left: 4rem;
@@ -161,7 +157,7 @@ aside#activity {
     margin: 0;
     padding: 1rem 0; /* 仅在顶部和底部添加内边距 */
     color: #ffffff; /* 标题文字颜色 */
-    text-align: center; /* 标题居中对齐 */
+    text-align: left; /* 标题居中对齐 */
     border-bottom: 2px solid #555555; /* 标题下方的边框 */
   }
   
