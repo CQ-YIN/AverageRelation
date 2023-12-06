@@ -105,29 +105,29 @@ async function main() {
 
         console.log(priceHistory, owners)
 
-        function drawChart(data) {
-    const ctx = document.getElementById('priceHistoryChart').getContext('2d');
-    const myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: data.labels,
-            datasets: [{
-                label: 'Price History',
-                data: data.prices,
-                backgroundColor: 'rgba(0, 123, 255, 0.2)',
-                borderColor: 'rgba(0, 123, 255, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: false
-                }
-            }
-        }
-    });
-}
+//         function drawChart(data) {
+//     const ctx = document.getElementById('priceHistoryChart').getContext('2d');
+//     const myChart = new Chart(ctx, {
+//         type: 'line',
+//         data: {
+//             labels: data.labels,
+//             datasets: [{
+//                 label: 'Price History',
+//                 data: data.prices,
+//                 backgroundColor: 'rgba(0, 123, 255, 0.2)',
+//                 borderColor: 'rgba(0, 123, 255, 1)',
+//                 borderWidth: 1
+//             }]
+//         },
+//         options: {
+//             scales: {
+//                 y: {
+//                     beginAtZero: false
+//                 }
+//             }
+//         }
+//     });
+// }
 
 
         // get the price history of the current relationship
