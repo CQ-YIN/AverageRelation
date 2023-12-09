@@ -1,4 +1,4 @@
-contractAddress = "0x3D01F37b2D306AE9aa87d77019522Ba9dd42FE60"
+contractAddress = "0xE59BBd08A6DC6BC18f3748EC62107829efCA99E8"
 contractABI =[
 	{
 		"inputs": [
@@ -187,6 +187,44 @@ contractABI =[
 			}
 		],
 		"name": "ApprovalForAll",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "_fromTokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "_toTokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "BatchMetadataUpdate",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "MetadataUpdate",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [],
+		"name": "NFTMinted",
 		"type": "event"
 	},
 	{

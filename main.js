@@ -1,6 +1,7 @@
 let contract;
 let signer;
 let contractWithSigner;
+let currentRelationshipId;
 
 main();
 
@@ -14,6 +15,8 @@ async function main() {
     contract = new ethers.Contract(contractAddress, contractABI, provider);
     contractWithSigner = contract.connect(signer);
     console.log("connected???")
+
+    currentRelationshipId = submitBtn.dataset.relationshipId;
 
 
     // 1. display the average price for each relationship
@@ -67,13 +70,36 @@ async function main() {
         }
     });
 
+    contract.on("NFTMinted", async () => {
+        console.log("NFTMinted event emitted")
+        updateAveragePrice();
+
+        const priceHistory = await contract.getPriceHistory(currentRelationshipId);
+        const owners = await contract.getOwners(currentRelationshipId);
+
+        let currentPrice = priceHistory[priceHistory.length-1];
+        let currentOwner = owners[owners.length-1];
+
+        currentPrice = ethers.utils.formatEther(+currentPrice + "");
+        currentOwner = currentOwner + "";
+        console.log(currentPrice, currentOwner);
+
+        const newRow =
+        `
+        <div class="owner">${currentOwner}</div>
+        <div class="price">${currentPrice}</div>
+        `
+
+        $('.price-history-container').append(newRow);
+    })
+
     function isValidPrice(price) {
         const numPrice = parseFloat(price);
         return numPrice >= 0.1 && numPrice <= 10;
     }
 
     async function updateAveragePrice() {
-        const currentRelationshipId = submitBtn.dataset.relationshipId;
+        
         let averagePrice = await contract.getAveragePrice(currentRelationshipId);
         averagePrice = +averagePrice + "";
         averagePrice = ethers.utils.formatEther(averagePrice);
@@ -81,7 +107,6 @@ async function main() {
     }
 
     async function displayPriceHistory() {
-        const currentRelationshipId = submitBtn.dataset.relationshipId;
 
         const priceHistory = await contract.getPriceHistory(currentRelationshipId);
         const owners = await contract.getOwners(currentRelationshipId);
