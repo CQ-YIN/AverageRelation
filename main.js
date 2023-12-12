@@ -4,12 +4,14 @@ let contractWithSigner;
 let currentRelationshipId;
 
 main();
-
-//Different path for "P" and "J",
+//Crit:
+//Make the connection between mbti and distance clearer.
+//e.g. Different path for "P" and "J",
 //E.g. "J" can access and mint the Relationship NFTs,
 // but "P" can only look at the numbers without doing actual trans
 // adding a section for people to leave and show their reason for the measurement in the website
 // showing the average prices for each NFT in the portal page.
+
 
 async function main() {
     console.log("is this working?");
