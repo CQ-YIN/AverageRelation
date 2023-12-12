@@ -4,6 +4,7 @@ let contractWithSigner;
 let currentRelationshipId;
 
 main();
+
 //Crit:
 //Make the connection between mbti and distance clearer.
 //e.g. Different path for "P" and "J",
